@@ -6,7 +6,7 @@ export const SITE_CONTENT = {
   HERO: {
     TITLE: 'Welcome to Shay Compass',
     SUBTITLE: 'Turning Concepts into Reality',
-    BACKGROUND_IMAGE: '/hero.svg',
+    BACKGROUND_IMAGE: '/background-pgh.webp',
     BACKGROUND_POSITION: '65% center',
   },
 

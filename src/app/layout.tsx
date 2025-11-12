@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="lit" className="scroll-smooth">
+    <html lang="en" data-theme="light" style={{ scrollBehavior: 'smooth' }}>
       <body className={inter.className}>
         <Navbar>
           <NavLinks />
