@@ -5,3 +5,48 @@
 html {
  scroll-behavior: smooth !important;
 }
+
+/* Glass morphism utilities */
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+/* Custom border utilities for geometric design */
+@layer utilities {
+  .border-3 {
+    border-width: 3px;
+  }
+
+  .border-4 {
+    border-width: 4px;
+  }
+
+  .border-5 {
+    border-width: 5px;
+  }
+}
+
+/* Enhanced focus styles for accessibility and design */
+@layer base {
+  input:focus,
+  textarea:focus,
+  button:focus-visible {
+    outline: none;
+  }
+}

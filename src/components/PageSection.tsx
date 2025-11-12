@@ -11,8 +11,10 @@ export default function PageSection({
   backgroundColor = 'base-100',
   maxWidth = 'max-w-5xl'
 }: PageSectionProps) {
+  const bgClass = backgroundColor === 'base-200' ? 'bg-gray-50' : 'bg-white';
+
   return (
-    <section id={id} className={`bg-${backgroundColor} py-20 px-6`}>
+    <section id={id} className={`${bgClass} py-24 md:py-32 px-6`}>
       <div className={`${maxWidth} mx-auto`}>
         {children}
       </div>
