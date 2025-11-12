@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { projects } from '@/constants/projects';
 import PropertyImageGallery from '@/components/PropertyImageGallery';
+import { getAllProjectSlugs, getProjectBySlug } from '@/util/payloadQueries';
+import { transformPayloadProject } from '@/util/transformPayloadData';
 
 interface ProjectPageProps {
   params: Promise<{
@@ -10,14 +11,29 @@ interface ProjectPageProps {
 }
 
 export async function generateStaticParams() {
-  return projects.map((project) => ({
-    id: project.id,
-  }));
+  try {
+    const slugs = await getAllProjectSlugs();
+    return slugs.map((slug) => ({
+      id: slug,
+    }));
+  } catch (error) {
+    console.error('Failed to generate static params:', error);
+    return [];
+  }
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { id } = await params;
-  const project = projects.find((p) => p.id === id);
+
+  let project = null;
+  try {
+    const payloadProject = await getProjectBySlug(id);
+    if (payloadProject) {
+      project = transformPayloadProject(payloadProject);
+    }
+  } catch (error) {
+    console.error('Failed to fetch project:', error);
+  }
 
   if (!project) {
     notFound();

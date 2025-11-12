@@ -1,9 +1,13 @@
 import PageSection from './PageSection';
 import SectionHeading from './SectionHeading';
 import ProjectCard from './ProjectCard';
-import { projects } from '@/constants/projects';
+import type { Project } from '@/types/projectType';
 
-export default function ProjectsSection() {
+interface ProjectsSectionProps {
+  projects: Project[];
+}
+
+export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
     <PageSection id="projects" backgroundColor="base-200" maxWidth="max-w-7xl">
       <SectionHeading title="Featured Developments" />

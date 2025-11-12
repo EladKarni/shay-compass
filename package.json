@@ -9,12 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.63.0",
+    "@payloadcms/next": "^3.63.0",
+    "@payloadcms/richtext-lexical": "^3.63.0",
     "clsx": "^2.1.1",
     "daisyui": "^4.11.1",
     "next": "15.3.4",
+    "payload": "^3.63.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-use": "^17.5.1",
+    "sharp": "^0.34.5",
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
