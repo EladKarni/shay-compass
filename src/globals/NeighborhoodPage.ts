@@ -5,6 +5,12 @@ export const NeighborhoodPage: GlobalConfig = {
   label: "Neighborhood Page",
   admin: {
     description: "Manage the Neighborhood page content and features",
+    livePreview: {
+      url: () => {
+        const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+        return `${baseUrl}/api/preview?global=neighborhood-page`
+      },
+    },
   },
   access: {
     read: () => true,

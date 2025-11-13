@@ -5,6 +5,12 @@ export const NeighborhoodSection: GlobalConfig = {
   label: "Neighborhood",
   admin: {
     description: "Manage the Neighborhood section on the homepage",
+    livePreview: {
+      url: () => {
+        const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+        return `${baseUrl}/api/preview?global=neighborhood-section`
+      },
+    },
   },
   access: {
     read: () => true,

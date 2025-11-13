@@ -5,6 +5,12 @@ export const ContactSection: GlobalConfig = {
   label: "Contact",
   admin: {
     description: "Manage the Contact section form labels and content",
+    livePreview: {
+      url: () => {
+        const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+        return `${baseUrl}/api/preview?global=contact-section`
+      },
+    },
   },
   access: {
     read: () => true,

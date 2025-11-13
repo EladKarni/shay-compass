@@ -5,6 +5,12 @@ export const TeamPage: GlobalConfig = {
   label: "Team Page",
   admin: {
     description: "Manage the Team page content and partner companies",
+    livePreview: {
+      url: () => {
+        const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+        return `${baseUrl}/api/preview?global=team-page`
+      },
+    },
   },
   access: {
     read: () => true,

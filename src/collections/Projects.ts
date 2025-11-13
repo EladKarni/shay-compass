@@ -5,6 +5,12 @@ export const Projects: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'slug', 'updatedAt'],
+    livePreview: {
+      url: ({ data }) => {
+        const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+        return `${baseUrl}/api/preview?collection=projects&slug=${data.slug}`
+      },
+    },
   },
   access: {
     read: () => true,

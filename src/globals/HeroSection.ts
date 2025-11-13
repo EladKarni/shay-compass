@@ -5,6 +5,12 @@ export const HeroSection: GlobalConfig = {
   label: "Hero",
   admin: {
     description: "Manage the main hero section on the homepage",
+    livePreview: {
+      url: () => {
+        const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+        return `${baseUrl}/api/preview?global=hero-section`
+      },
+    },
   },
   access: {
     read: () => true,

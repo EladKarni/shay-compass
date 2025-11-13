@@ -5,6 +5,12 @@ export const TeamSection: GlobalConfig = {
   label: "Team Section",
   admin: {
     description: "Manage the Team section content on the homepage",
+    livePreview: {
+      url: () => {
+        const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+        return `${baseUrl}/api/preview?global=team-section`
+      },
+    },
   },
   access: {
     read: () => true,

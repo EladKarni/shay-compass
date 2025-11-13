@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Didact_Gothic } from "next/font/google";
 import Footer from "@/components/footer";
 import HeroNavigation from "@/components/HeroNavigation";
-import NavBar from "@/components/navbar";
+import { LivePreview } from "@/components/LivePreview";
 import "../globals.css";
 
 const didactGothic = Didact_Gothic({
@@ -25,8 +25,8 @@ export default function MainLayout({
     return (
         <html lang="en" data-theme="light" suppressHydrationWarning>
             <body className={`${didactGothic.variable}`}>
+                <LivePreview />
                 <HeroNavigation />
-                <NavBar />
                 {children}
                 <Footer />
             </body>
