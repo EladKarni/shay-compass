@@ -3,20 +3,32 @@ import { withPayload } from '@payloadcms/next/withPayload'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Your Next.js config options here
-  serverExternalPackages: ['postgres'],
+  serverExternalPackages: [
+    'sharp',
+    '@payloadcms/db-postgres',
+    'drizzle-orm',
+    'payload',
+  ],
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.externals = config.externals || []
-      config.externals.push('postgres')
+      config.externals.push(
+        'pg-native',
+        'sharp',
+        '@node-rs/argon2',
+        '@node-rs/bcrypt',
+      )
     }
     return config
   },
-  // Disable static generation for dynamic routes during build
   experimental: {
     outputFileTracingIncludes: {
       '/api/**/*': ['./node_modules/**/*.wasm', './node_modules/**/*.node'],
     },
   },
+  // Optimize bundle size
+  outputFileTracing: true,
+  swcMinify: true,
   images: {
     remotePatterns: [
       {

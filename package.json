@@ -20,7 +20,6 @@
     "graphql": "^16.9.0",
     "next": "15.3.4",
     "payload": "^3.63.0",
-    "postgres": "^3.4.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-use": "^17.5.1",
