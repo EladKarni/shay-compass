@@ -3,9 +3,7 @@ import { withPayload } from '@payloadcms/next/withPayload'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Your Next.js config options here
-  experimental: {
-    serverComponentsExternalPackages: ['postgres'],
-  },
+  serverExternalPackages: ['postgres'],
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.externals = config.externals || []
