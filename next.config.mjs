@@ -11,6 +11,12 @@ const nextConfig = {
     }
     return config
   },
+  // Disable static generation for dynamic routes during build
+  experimental: {
+    outputFileTracingIncludes: {
+      '/api/**/*': ['./node_modules/**/*.wasm', './node_modules/**/*.node'],
+    },
+  },
   images: {
     remotePatterns: [
       {

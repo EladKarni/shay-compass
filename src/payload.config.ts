@@ -45,7 +45,7 @@ export default buildConfig({
   },
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI || "",
+      connectionString: process.env.NETLIFY_DATABASE_URL || "",
     },
   }),
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:3000",
