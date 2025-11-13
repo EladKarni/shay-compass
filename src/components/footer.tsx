@@ -45,9 +45,9 @@ const Footer = () => {
           <div className="flex flex-col items-center">
             <h3 className="font-semibold text-base-content mb-4">Get In Touch</h3>
             <div className="flex flex-col gap-2 text-sm text-base-content/70 items-center">
-              <a href="/#contact" className="hover:text-base-content transition-colors">
+              <Link href="/#contact" className="hover:text-base-content transition-colors">
                 Contact Form
-              </a>
+              </Link>
             </div>
           </div>
         </div>

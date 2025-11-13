@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import HeroSection from '@/components/HeroSection';
 import TeamSection from '@/components/TeamSection';
 import ProjectsSection from '@/components/ProjectsSection';
@@ -39,7 +40,9 @@ export default async function Home() {
 
   return (
     <main className="relative">
-      <HashScrollHandler />
+      <Suspense fallback={null}>
+        <HashScrollHandler />
+      </Suspense>
 
       <HeroSection
         title={heroData?.title}
