@@ -15,7 +15,8 @@ export const Media: CollectionConfig = {
       required: false,
       hooks: {
         beforeValidate: [
-          ({ value, data }) => {
+          (args) => {
+            const { value, data } = args
             // Auto-generate alt text from filename if not provided
             if (!value && data?.filename) {
               return data.filename.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ')
