@@ -53,7 +53,7 @@ export default buildConfig({
   sharp,
   plugins: [
     vercelBlobStorage({
-      enabled: process.env.NODE_ENV === "production",
+      enabled: !!process.env.BLOB_READ_WRITE_TOKEN, // Enable if token is present
       collections: {
         media: {
           disablePayloadAccessControl: true,
