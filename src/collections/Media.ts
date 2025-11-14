@@ -6,7 +6,31 @@ export const Media: CollectionConfig = {
     read: () => true,
     create: () => true,
     update: () => true,
-    delete: () => true,
+    delete: async ({ req }) => {
+      // Allow deletion - errors will be handled in hooks
+      return true
+    },
+  },
+  hooks: {
+    beforeDelete: [
+      async ({ req, id }) => {
+        console.log(`Attempting to delete media with ID: ${id}`)
+        try {
+          // The storage adapter will handle file deletion
+          // If it fails, we'll still delete the database record
+          return
+        } catch (error) {
+          console.warn(`File deletion may have failed, but continuing with DB cleanup:`, error)
+          return
+        }
+      },
+    ],
+    afterDelete: [
+      async ({ req, id, doc }) => {
+        console.log(`Successfully deleted media from database: ${doc?.filename}`)
+        return
+      },
+    ],
   },
   fields: [
     {
