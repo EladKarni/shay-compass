@@ -57,7 +57,7 @@ export default async function Home() {
         title={neighborhoodData?.title}
         image={getMediaUrl(neighborhoodData?.image)}
         imageAlt={neighborhoodData?.imageAlt}
-        description={neighborhoodData?.description}
+        description={extractTextFromRichText(neighborhoodData?.description)}
         learnMoreLink={neighborhoodData?.learnMoreLink}
       />
 

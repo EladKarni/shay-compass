@@ -17,17 +17,16 @@ interface TeamSectionProps {
   learnMoreLink?: string;
 }
 
-const defaultDescription = `Shay Compass is a full-service real estate development and investment firm dedicated to
-creating exceptional residential and commercial properties. With decades of combined experience
-in property development, construction management, and market analysis, we transform strategic
-visions into tangible assets that deliver lasting value.`;
-
 export default function TeamSection({
   title = 'Meet the Team',
-  description = defaultDescription,
+  description = '',
   companies = [],
   learnMoreLink = '/team',
 }: TeamSectionProps) {
+  if (!title || !description || !learnMoreLink) {
+    return null;
+  }
+
   return (
     <PageSection id="team">
       <SectionHeading title={title} />

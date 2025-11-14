@@ -31,7 +31,7 @@ export const NeighborhoodSection: GlobalConfig = {
       type: "upload",
       label: "Image",
       relationTo: "media",
-      required: true,
+      required: false,
       admin: {
         description: "Main neighborhood image",
       },
