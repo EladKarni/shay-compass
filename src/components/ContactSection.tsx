@@ -23,7 +23,7 @@ export default function ContactSection({
   submitButtonText,
 }: ContactSectionProps) {
   return (
-    <PageSection id="contact" maxWidth="max-w-3xl">
+    <PageSection id="contact" maxWidth="max-w-7xl">
       <SectionHeading title={title} />
       <div className="bg-white/60 backdrop-blur-md border border-gray-200 rounded-2xl shadow-lg p-8">
         <form className="space-y-6">

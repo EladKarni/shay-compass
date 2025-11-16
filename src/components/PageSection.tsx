@@ -9,7 +9,7 @@ export default function PageSection({
   id,
   children,
   backgroundColor = 'base-100',
-  maxWidth = 'max-w-5xl'
+  maxWidth = 'max-w-7xl'
 }: PageSectionProps) {
   const bgClass = backgroundColor === 'base-200' ? 'bg-gray-50' : 'bg-white';
 

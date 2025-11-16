@@ -30,12 +30,12 @@ export default function TeamSection({
   return (
     <PageSection id="team">
       <SectionHeading title={title} />
-      <div className="max-w-3xl mx-auto">
-        <div className="text-lg md:text-xl text-base-content/80 space-y-6 leading-relaxed">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-lg md:text-xl text-base-content/80 space-y-6 leading-relaxed text-center">
           <p>{description}</p>
 
           <div className="flex gap-12 mt-6 justify-between">
-            <Button href={learnMoreLink} variant="text" size="lg">
+            <Button href={learnMoreLink} variant="text" size="lg" className='mx-auto'>
               Learn More
             </Button>
 

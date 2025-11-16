@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ id, title, description, heroImage }: ProjectCardProps) {
   return (
-    <div className="group bg-white/90 backdrop-blur-sm border border-gray-300 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col relative h-full">
+    <Link href={`/projects/${id}`} className="group bg-white/90 backdrop-blur-sm border border-gray-300 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col relative h-full">
       <figure className="relative h-56 bg-gradient-to-br from-gray-50 to-gray-100 border-b border-gray-200">
         <Image
           src={heroImage}
@@ -25,13 +25,11 @@ export default function ProjectCard({ id, title, description, heroImage }: Proje
         <p className="text-gray-700 mb-6 leading-relaxed">{description}</p>
 
         <div className="flex mt-auto">
-          <Link href={`/projects/${id}`}>
-            <button className="py-2.5 text-xl text-black italic rounded-lg hover:font-medium transition">
-              Learn More
-            </button>
-          </Link>
+          <button className="py-2.5 text-xl text-black italic rounded-lg hover:font-medium transition">
+            View Project
+          </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
