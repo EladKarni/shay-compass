@@ -18,7 +18,6 @@ export default function NeighborhoodSection({
   description,
   learnMoreLink,
 }: NeighborhoodSectionProps) {
-  console.log(title, image, imageAlt, description, learnMoreLink);
 
   if (!title || !image || !imageAlt || !description || !learnMoreLink) {
     return null;
