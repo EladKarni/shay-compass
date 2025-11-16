@@ -2,7 +2,7 @@ import PageSection from './PageSection';
 import SectionHeading from './SectionHeading';
 
 interface ContactSectionProps {
-  title?: string;
+  title: string;
   nameLabel?: string;
   namePlaceholder?: string;
   emailLabel?: string;
