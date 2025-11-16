@@ -3,7 +3,7 @@ export interface Project {
   title: string;
   description: string;
   image?: string;
-  heroImage?: string;
+  heroImage: string;
   fullDescription?: string;
   technologies?: string[];
   features?: string[];
