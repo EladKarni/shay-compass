@@ -35,10 +35,10 @@ export const Projects: CollectionConfig = {
             if (data?.title && !value) {
               return data.title
                 .toLowerCase()
-                .replace(/[^\w\s-]/g, '')
-                .replace(/\s+/g, '-')
-                .replace(/-+/g, '-')
-                .trim()
+                .replace(/[^\w\s-]/g, '') // Remove special characters
+                .replace(/\s+/g, '-') // Replace spaces with hyphens
+                .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+                .replace(/^-+|-+$/g, '') // Remove leading and trailing hyphens
             }
             return value
           },
