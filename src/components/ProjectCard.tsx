@@ -5,33 +5,26 @@ interface ProjectCardProps {
   id: string;
   title: string;
   description: string;
-  heroImage?: string;
+  heroImage: string;
 }
 
 export default function ProjectCard({ id, title, description, heroImage }: ProjectCardProps) {
   return (
-    <div className="group bg-white/90 backdrop-blur-sm border border-gray-300 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-      <figure className="relative h-48 bg-gradient-to-br from-gray-50 to-gray-100 border-b border-gray-200 overflow-hidden">
-        {heroImage ? (
-          <Image
-            src={heroImage}
-            alt={title}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-base-content/40 font-medium">
-            Property Image
-          </div>
-        )}
+    <div className="group bg-white/90 backdrop-blur-sm border border-gray-300 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col relative h-full">
+      <figure className="relative h-56 bg-gradient-to-br from-gray-50 to-gray-100 border-b border-gray-200">
+        <Image
+          src={heroImage}
+          alt={title}
+          fill
+          className="object-contain group-hover:scale-105 transition-transform duration-300"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
       </figure>
-
-      <div className="p-6 bg-white/60 backdrop-blur-sm group-hover:bg-white/80 transition-colors duration-300">
+      <div className="p-4 bg-white/60 backdrop-blur-sm group-hover:bg-white/80 transition-colors duration-300 flex flex-col flex-grow">
         <h3 className="text-2xl font-bold text-gray-900 mb-3">{title}</h3>
         <p className="text-gray-700 mb-6 leading-relaxed">{description}</p>
 
-        <div className="flex">
+        <div className="flex mt-auto">
           <Link href={`/projects/${id}`}>
             <button className="py-2.5 text-xl text-black italic rounded-lg hover:font-medium transition">
               Learn More
