@@ -7,6 +7,7 @@ import HashScrollHandler from '@/components/HashScrollHandler';
 import {
   getAllProjects,
   getHeroSection,
+  getProjectsSection,
   getTeamSection,
   getNeighborhoodSection,
   getContactSection
@@ -22,12 +23,14 @@ export default async function Home() {
   const [
     payloadProjects,
     heroData,
+    projectsData,
     teamData,
     neighborhoodData,
     contactData,
   ] = await Promise.all([
     getAllProjects().catch(() => []),
     getHeroSection().catch(() => null),
+    getProjectsSection().catch(() => null),
     getTeamSection().catch(() => null),
     getNeighborhoodSection().catch(() => null),
     getContactSection().catch(() => null),
@@ -37,6 +40,35 @@ export default async function Home() {
   const projects = Array.isArray(payloadProjects)
     ? payloadProjects.map(transformPayloadProject)
     : [];
+
+  // Debug logging for data transformation
+  console.log('[Page Debug] Data received and transformed:', {
+    projectsCount: projects.length,
+    heroData: {
+      hasTitle: !!heroData?.title,
+      hasSubtitle: !!heroData?.subtitle,
+      hasBackgroundImage: !!heroData?.backgroundImage,
+    },
+    projectsData: {
+      hasTitle: !!projectsData?.title,
+    },
+    teamData: {
+      hasTitle: !!teamData?.title,
+      hasDescription: !!teamData?.description,
+      hasLearnMoreLink: !!teamData?.learnMoreLink,
+      descriptionExtracted: extractTextFromRichText(teamData?.description),
+      companiesCount: teamData?.companies?.length || 0,
+    },
+    neighborhoodData: {
+      hasTitle: !!neighborhoodData?.title,
+      hasImage: !!neighborhoodData?.image,
+      hasDescription: !!neighborhoodData?.description,
+      hasLearnMoreLink: !!neighborhoodData?.learnMoreLink,
+    },
+    contactData: {
+      hasTitle: !!contactData?.title,
+    },
+  });
 
   return (
     <main className="relative">
@@ -51,7 +83,7 @@ export default async function Home() {
         backgroundPosition={heroData?.backgroundPosition}
       />
 
-      <ProjectsSection projects={projects} />
+      <ProjectsSection title={projectsData?.title} projects={projects} />
 
       <NeighborhoodSection
         title={neighborhoodData?.title}

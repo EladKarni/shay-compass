@@ -31,7 +31,7 @@ export const NeighborhoodSection: GlobalConfig = {
       type: "upload",
       label: "Image",
       relationTo: "media",
-      required: false,
+      required: true,
       admin: {
         description: "Main neighborhood image",
       },
@@ -59,7 +59,8 @@ export const NeighborhoodSection: GlobalConfig = {
       name: "learnMoreLink",
       type: "text",
       label: "Learn More Link",
-      defaultValue: "/neighberhood",
+      required: true,
+      defaultValue: "/neighborhood",
       admin: {
         description: 'URL for the "Learn More" button',
       },

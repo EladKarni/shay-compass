@@ -1,4 +1,3 @@
-import { SITE_CONTENT } from '@/constants/siteContent';
 import HeroNavigation from './HeroNavigation';
 
 interface HeroSectionProps {
@@ -9,10 +8,10 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({
-  title = SITE_CONTENT.HERO.TITLE,
-  subtitle = SITE_CONTENT.HERO.SUBTITLE,
-  backgroundImage = SITE_CONTENT.HERO.BACKGROUND_IMAGE,
-  backgroundPosition = SITE_CONTENT.HERO.BACKGROUND_POSITION,
+  title,
+  subtitle,
+  backgroundImage,
+  backgroundPosition = '50% center',
 }: HeroSectionProps) {
   return (
     <section

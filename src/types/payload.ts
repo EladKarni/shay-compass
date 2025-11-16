@@ -59,7 +59,6 @@ export interface Company {
   name: string;
   logo: Media | string;
   alt?: string;
-  description: string;
   link?: string;
 }
 

@@ -13,14 +13,14 @@ interface ContactSectionProps {
 }
 
 export default function ContactSection({
-  title = 'Get In Touch',
-  nameLabel = 'Name',
-  namePlaceholder = 'Your name',
-  emailLabel = 'Email',
-  emailPlaceholder = 'your@email.com',
-  messageLabel = 'Message',
-  messagePlaceholder = 'Your message',
-  submitButtonText = 'Send Message',
+  title,
+  nameLabel,
+  namePlaceholder,
+  emailLabel,
+  emailPlaceholder,
+  messageLabel,
+  messagePlaceholder,
+  submitButtonText,
 }: ContactSectionProps) {
   return (
     <PageSection id="contact" maxWidth="max-w-3xl">

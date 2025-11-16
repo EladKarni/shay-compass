@@ -32,7 +32,7 @@ export default function NeighborhoodSection({
           alt={imageAlt}
           width={800}
           height={400}
-          className="rounded-lg filter grayscale mb-6"
+          className="rounded-lg filter mb-6"
         />
         <div className="text-lg md:text-xl text-base-content/80 space-y-6 leading-relaxed">
           <p className="mb-4">{description}</p>

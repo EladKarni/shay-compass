@@ -14,20 +14,30 @@ export function getMediaUrl(
   media: Media | string | null | undefined,
   fallback?: string
 ): string | undefined {
-  if (!media) return fallback;
+  if (!media) {
+    console.log('[Media Helper] No media provided, using fallback:', fallback);
+    return fallback;
+  }
 
-  if (typeof media === 'string') return media;
+  if (typeof media === 'string') {
+    console.log('[Media Helper] Media is string URL:', media);
+    return media;
+  }
 
   // Prioritize URL property (from Vercel Blob or other cloud storage)
   if (isMediaObject(media) && media.url) {
+    console.log('[Media Helper] Using media.url:', media.url);
     return media.url;
   }
 
   // Fallback to local path if no URL is available
   if (isMediaObject(media) && media.filename) {
-    return `/media/${media.filename}`;
+    const localPath = `/media/${media.filename}`;
+    console.log('[Media Helper] Using local path:', localPath);
+    return localPath;
   }
 
+  console.log('[Media Helper] Could not extract URL, using fallback:', fallback);
   return fallback;
 }
 

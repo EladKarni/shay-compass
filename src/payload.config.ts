@@ -13,6 +13,7 @@ import { Projects } from "./collections/Projects.ts";
 
 // Import globals
 import { HeroSection } from "./globals/HeroSection.ts";
+import { ProjectsSection } from "./globals/ProjectsSection.ts";
 import { TeamSection } from "./globals/TeamSection.ts";
 import { NeighborhoodSection } from "./globals/NeighborhoodSection.ts";
 import { ContactSection } from "./globals/ContactSection.ts";
@@ -33,6 +34,7 @@ export default buildConfig({
   collections: [Users, Media, Projects],
   globals: [
     HeroSection,
+    ProjectsSection,
     TeamSection,
     NeighborhoodSection,
     ContactSection,

@@ -79,6 +79,7 @@ export const TeamSection: GlobalConfig = {
       name: "learnMoreLink",
       type: "text",
       label: "Learn More Link",
+      required: true,
       defaultValue: "/team",
       admin: {
         description: 'URL for the "Learn More" button',
