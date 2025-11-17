@@ -27,32 +27,68 @@ export const NeighborhoodSection: GlobalConfig = {
       },
     },
     {
-      name: "image",
-      type: "upload",
-      label: "Image",
-      relationTo: "media",
-      required: true,
-      admin: {
-        description: "Main neighborhood image",
-      },
+      name: "features",
+      type: "array",
+      label: "Neighborhood Features",
+      minRows: 1,
+      maxRows: 20,
+      fields: [
+        {
+          name: "title",
+          type: "text",
+          label: "Feature Title",
+          required: false,
+          admin: {
+            description: "Optional title for this feature",
+          },
+        },
+        {
+          name: "description",
+          type: "richText",
+          label: "Description",
+          required: true,
+          admin: {
+            description: "Description text for this feature",
+          },
+        },
+        {
+          name: "image",
+          type: "upload",
+          label: "Feature Image",
+          relationTo: "media",
+          required: true,
+          admin: {
+            description: "Upload or select an image for this feature",
+          },
+        },
+        {
+          name: "imageAlt",
+          type: "text",
+          label: "Image Alt Text",
+          required: true,
+          admin: {
+            description: "Alternative text for accessibility",
+          },
+        },
+      ],
     },
     {
-      name: "imageAlt",
-      type: "text",
-      label: "Image Alt Text",
-      required: true,
-      defaultValue: "Neighborhood",
-      admin: {
-        description: "Alt text for the image",
-      },
-    },
-    {
-      name: "description",
+      name: "ctaText",
       type: "richText",
-      label: "Description",
+      label: "Call to Action Text",
       required: true,
       admin: {
-        description: "Description text",
+        description: "Text displayed in the call to action section at the bottom",
+      },
+    },
+    {
+      name: "ctaButtonText",
+      type: "text",
+      label: "CTA Button Text",
+      required: true,
+      defaultValue: "Explore The Vision",
+      admin: {
+        description: "Text displayed on the call to action button",
       },
     },
     {

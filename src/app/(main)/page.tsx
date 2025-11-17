@@ -87,9 +87,14 @@ export default async function Home() {
 
       <NeighborhoodSection
         title={neighborhoodData?.title}
-        image={getMediaUrl(neighborhoodData?.image)}
-        imageAlt={neighborhoodData?.imageAlt}
-        description={extractTextFromRichText(neighborhoodData?.description)}
+        features={neighborhoodData?.features?.map((feature: any) => ({
+          title: feature.title,
+          description: extractTextFromRichText(feature.description),
+          image: getMediaUrl(feature.image) || '',
+          imageAlt: feature.imageAlt,
+        }))}
+        ctaText={extractTextFromRichText(neighborhoodData?.ctaText)}
+        ctaButtonText={neighborhoodData?.ctaButtonText}
         learnMoreLink={neighborhoodData?.learnMoreLink}
       />
 
