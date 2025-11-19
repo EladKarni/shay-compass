@@ -46,7 +46,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         className="relative h-[30vh] w-full bg-gray-50 flex items-end pt-20"
       >
         {/* Content container */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-4">
           <h1 className="text-5xl md:text-6xl font-bold text-black mb-4">{project.title}</h1>
           <p className="text-xl md:text-2xl text-black/90 font-light max-w-3xl">
             {project.description}
