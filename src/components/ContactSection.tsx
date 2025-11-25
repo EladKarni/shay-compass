@@ -26,7 +26,13 @@ export default function ContactSection({
     <PageSection id="contact" maxWidth="max-w-7xl">
       <SectionHeading title={title} />
       <div className="bg-white/60 backdrop-blur-md border border-gray-200 rounded-2xl shadow-lg p-8">
-        <form className="space-y-6">
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="honeypot"
+          className="space-y-6"
+        >
           <input
             type="text"
             name="honeypot"
@@ -42,6 +48,7 @@ export default function ContactSection({
             </label>
             <input
               type="text"
+              name="name"
               placeholder={namePlaceholder}
               className="input input-bordered w-full border-gray-300 focus:border-gray-700 focus:ring-2 focus:ring-gray-200 rounded-lg bg-white/80 backdrop-blur-sm"
               required
@@ -54,6 +61,7 @@ export default function ContactSection({
             </label>
             <input
               type="email"
+              name="email"
               placeholder={emailPlaceholder}
               className="input input-bordered w-full border-gray-300 focus:border-gray-700 focus:ring-2 focus:ring-gray-200 rounded-lg bg-white/80 backdrop-blur-sm"
               required
@@ -65,6 +73,7 @@ export default function ContactSection({
               <span className="label-text text-gray-900 font-semibold">{messageLabel}</span>
             </label>
             <textarea
+              name="message"
               placeholder={messagePlaceholder}
               className="textarea textarea-bordered h-32 border-gray-300 focus:border-gray-700 focus:ring-2 focus:ring-gray-200 rounded-lg bg-white/80 backdrop-blur-sm resize-none"
               required
