@@ -28,7 +28,7 @@ export default function SuccessPage() {
                     </h1>
 
                     <p className="text-lg text-gray-700 mb-8">
-                        Your message has been successfully sent. We'll get back to you as soon as possible.
+                        Your message has been successfully sent. We&apos;ll get back to you as soon as possible.
                     </p>
 
                     <Link
