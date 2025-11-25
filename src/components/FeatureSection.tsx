@@ -19,20 +19,18 @@ export default function FeatureSection({
     description,
     image,
     imageAlt,
-    imageOnRight = false,
 }: FeatureSectionProps) {
-    const flexDirection = imageOnRight ? 'md:flex-row-reverse' : 'md:flex-row';
 
     return (
-        <div className={`flex flex-col ${flexDirection} gap-12 items-center`}>
+        <div className="flex flex-col gap-12 items-center">
             {/* Image */}
-            <div className="flex-1">
+            <div className="flex-1 relative w-full h-64">
                 <Image
                     src={image}
                     alt={imageAlt}
                     width={800}
                     height={500}
-                    className="rounded-lg shadow-lg w-full h-auto object-cover"
+                    className="rounded-lg shadow-lg w-full h-auto object-contain"
                 />
             </div>
 
