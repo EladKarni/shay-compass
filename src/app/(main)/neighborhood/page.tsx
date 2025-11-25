@@ -19,7 +19,7 @@ export default async function NeighberhoodPage() {
     const ctaButtonLink = pageData?.ctaButtonLink || "/#contact";
 
     return (
-        <main className="relative">
+        <main>
             <PageHero
                 title={heroTitle}
                 subtitle={heroSubtitle}

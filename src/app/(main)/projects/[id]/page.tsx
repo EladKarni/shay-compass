@@ -42,7 +42,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   console.log(project)
 
   return (
-    <>
+    <main>
       {/* Hero Section with Property Image */}
       <section>
         {/* Content container */}
@@ -95,6 +95,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
+
 }
