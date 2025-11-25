@@ -20,6 +20,7 @@ export default function HeroSection({
       style={{
         backgroundImage: `url('${backgroundImage}')`,
         backgroundPosition,
+        filter: "grayscale(100%)",
       }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
