@@ -18,11 +18,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" data-theme="light" suppressHydrationWarning>
-      <body className={`${didactGothic.variable}`}>
-        {children}
-      </body>
-    </html>
-  );
+  // Don't wrap in html/body here - let route groups handle their own layout
+  return children;
 }
