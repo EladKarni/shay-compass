@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+"use client";
 import PageSection from './PageSection';
 import SectionHeading from './SectionHeading';
 import router from 'next/router';
