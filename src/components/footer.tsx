@@ -15,7 +15,7 @@ const Footer = () => {
               className="mb-4 hover:opacity-80 transition-opacity"
               aria-label="Navigate to Shay Compass Home Page"
             >
-              <Logo fill="currentColor" className="h-12 w-auto" />
+              <Logo fill="currentColor" className="h-12 w-auto" height={150} width={150} />
             </Link>
             <p className="text-sm text-base-content/70 text-center">
               Building Communities, Creating Value

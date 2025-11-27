@@ -109,7 +109,7 @@ export function RichTextRenderer({ content, className = '' }: RichTextRendererPr
         <a
           href={url}
           className="text-blue-600 hover:text-blue-800 underline"
-          target={linkNode.target || linkNode.fields?.newTab ? '_blank' : '_self'}
+          target="_blank"
           rel={linkNode.rel || (linkNode.fields?.newTab ? 'noopener noreferrer' : undefined)}
         >
           {linkNode.children?.map((child: SerializedLexicalNode, index: number) => (

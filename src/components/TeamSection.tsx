@@ -36,7 +36,7 @@ export default function TeamSection({
 
           <div className="flex gap-12 mt-6 justify-between">
             <Button href={learnMoreLink} variant="text" size="lg" className='mx-auto'>
-              Learn More
+              Meet Us
             </Button>
 
             {companies.length > 0 && (
@@ -48,7 +48,7 @@ export default function TeamSection({
                       alt={company.alt || `${company.name} logo`}
                       width={64}
                       height={64}
-                      className="w-24 h-24 object-contain rounded-full bg-white p-2 transition-transform hover:scale-110 border border-gray-200 shadow-sm"
+                      className="w-24 h-24 object-contain rounded-full bg-slate-100 p-2 transition-transform hover:scale-110 border border-gray-200 shadow-sm"
                     />
                   );
 
