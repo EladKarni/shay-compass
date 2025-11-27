@@ -34,13 +34,13 @@ export default function TeamSection({
         <div className="text-lg md:text-xl text-base-content/80 space-y-6 leading-relaxed text-center">
           <p>{description}</p>
 
-          <div className="flex gap-12 mt-6 justify-between">
+          <div className="flex flex-col md:flex-row gap-12 mt-6 justify-between">
             <Button href={learnMoreLink} variant="text" size="lg" className='mx-auto'>
               Meet Us
             </Button>
 
             {companies.length > 0 && (
-              <div className='flex gap-12'>
+              <div className='flex gap-12 flex-wrap justify-center'>
                 {companies.map((company) => {
                   const logoImg = (
                     <Image
