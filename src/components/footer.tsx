@@ -53,10 +53,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-base-300">
+        <div className="pt-8 border-t border-base-300 flex flex-col gap-4">
           <p className="text-center text-sm text-base-content/60">
-            &copy; {currentYear} Shay Compass Development Group. All rights reserved.
+            &copy; {currentYear} Compass. All rights reserved.
           </p>
+        <p className="text-sm text-base-content/60"><b>Shay Dalal</b> is a licensed real estate associate broker affiliated with Compass RE, a licensed real estate broker and abides by Equal Housing Opportunity laws. All material presented herein is intended for informational purposes only. Information is compiled from sources deemed reliable but is subject to errors, omissions, changes in price, condition, sale, or withdrawal without notice. This is not intended to solicit property already listed. Photos may be virtually staged or digitally enhanced and may not reflect actual property conditions</p>
         </div>
       </div>
     </footer>
