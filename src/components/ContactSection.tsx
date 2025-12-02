@@ -26,19 +26,26 @@ export default function ContactSection({
 }: ContactSectionProps) {
   const router = useRouter();
 
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const myForm = event.currentTarget;
     const formData = new FormData(myForm);
 
-    fetch("/", {
+    const response = await fetch("/_forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData as any).toString(),
-    })
-      .then(() => router.push("/success"))
-      .catch((error) => alert(error));
+      body: new URLSearchParams({
+        "form-name": "contact",
+        ...Object.fromEntries(formData),
+      }).toString(),
+    });
+
+    if (!response.ok) {
+      alert("There was a problem submitting the form. Please try again.");
+      return;
+    }
+    router.push("/success");
   };
 
   return (
