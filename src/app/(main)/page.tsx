@@ -41,35 +41,6 @@ export default async function Home() {
     ? payloadProjects.map(transformPayloadProject)
     : [];
 
-  // Debug logging for data transformation
-  console.log('[Page Debug] Data received and transformed:', {
-    projectsCount: projects.length,
-    heroData: {
-      hasTitle: !!heroData?.title,
-      hasSubtitle: !!heroData?.subtitle,
-      hasBackgroundImage: !!heroData?.backgroundImage,
-    },
-    projectsData: {
-      hasTitle: !!projectsData?.title,
-    },
-    teamData: {
-      hasTitle: !!teamData?.title,
-      hasDescription: !!teamData?.description,
-      hasLearnMoreLink: !!teamData?.learnMoreLink,
-      descriptionExtracted: extractTextFromRichText(teamData?.description),
-      companiesCount: teamData?.companies?.length || 0,
-    },
-    neighborhoodData: {
-      hasTitle: !!neighborhoodData?.title,
-      hasImage: !!neighborhoodData?.image,
-      hasDescription: !!neighborhoodData?.description,
-      hasLearnMoreLink: !!neighborhoodData?.learnMoreLink,
-    },
-    contactData: {
-      hasTitle: !!contactData?.title,
-    },
-  });
-
   return (
     <main className="relative">
       <Suspense fallback={null}>

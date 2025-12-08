@@ -60,12 +60,6 @@ export async function getHeroSection() {
       slug: "hero-section",
       depth: 2,
     });
-    console.log('[Payload Query] Hero Section:', {
-      hasTitle: !!heroSection?.title,
-      hasSubtitle: !!heroSection?.subtitle,
-      hasBackgroundImage: !!heroSection?.backgroundImage,
-      backgroundPosition: heroSection?.backgroundPosition,
-    });
     return heroSection;
   } catch (error) {
     console.error("Failed to fetch hero section:", error);
@@ -83,10 +77,6 @@ export async function getProjectsSection() {
     const projectsSection = await payload.findGlobal({
       slug: "projects-section",
       depth: 0,
-    });
-    console.log('[Payload Query] Projects Section:', {
-      hasTitle: !!projectsSection?.title,
-      title: projectsSection?.title,
     });
     return projectsSection;
   } catch (error) {
@@ -106,14 +96,6 @@ export async function getTeamSection() {
       slug: "team-section",
       depth: 2,
     });
-    console.log('[Payload Query] Team Section:', {
-      hasTitle: !!teamSection?.title,
-      hasDescription: !!teamSection?.description,
-      hasLearnMoreLink: !!teamSection?.learnMoreLink,
-      companiesCount: teamSection?.companies?.length || 0,
-      title: teamSection?.title,
-      learnMoreLink: teamSection?.learnMoreLink,
-    });
     return teamSection;
   } catch (error) {
     console.error("Failed to fetch team section:", error);
@@ -132,15 +114,6 @@ export async function getNeighborhoodSection() {
       slug: "neighborhood-section",
       depth: 2,
     });
-    console.log('[Payload Query] Neighborhood Section:', {
-      hasTitle: !!neighborhoodSection?.title,
-      hasImage: !!neighborhoodSection?.image,
-      hasImageAlt: !!neighborhoodSection?.imageAlt,
-      hasDescription: !!neighborhoodSection?.description,
-      hasLearnMoreLink: !!neighborhoodSection?.learnMoreLink,
-      title: neighborhoodSection?.title,
-      learnMoreLink: neighborhoodSection?.learnMoreLink,
-    });
     return neighborhoodSection;
   } catch (error) {
     console.error("Failed to fetch neighborhood section:", error);
@@ -158,11 +131,6 @@ export async function getContactSection() {
     const contactSection = await payload.findGlobal({
       slug: "contact-section",
       depth: 0,
-    });
-    console.log('[Payload Query] Contact Section:', {
-      hasTitle: !!contactSection?.title,
-      hasAllFields: !!(contactSection?.nameLabel && contactSection?.emailLabel && contactSection?.messageLabel),
-      title: contactSection?.title,
     });
     return contactSection;
   } catch (error) {

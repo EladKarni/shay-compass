@@ -39,8 +39,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
-  console.log(project)
-
   return (
     <main>
       {/* Hero Section with Property Image */}
