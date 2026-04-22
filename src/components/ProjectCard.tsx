@@ -39,21 +39,21 @@ export default function ProjectCard({ id, title, description, heroImage, hasSold
         <>
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-10 bg-gray-900/60"
+            className="pointer-events-none absolute inset-0 z-10 bg-gray-500/60"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
+            className="pointer-events-none absolute inset-0 z-20 flex items-end justify-end p-8"
           >
             <Image
               src="/sold-stamp.webp"
               alt=""
               width={320}
               height={180}
-              className="w-3/4 max-w-xs h-auto drop-shadow-md opacity-90"
+              className="w-3/5 max-w-xs h-auto drop-shadow-md opacity-60"
             />
           </div>
-          <span className="sr-only">This property is sold.</span>
+          <span className="sr-only">This property has sold.</span>
         </>
       )}
     </>
