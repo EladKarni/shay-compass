@@ -46,7 +46,7 @@ export default function ProjectCard({ id, title, description, heroImage, hasSold
             className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
           >
             <Image
-              src="/sold-stamp.png"
+              src="/sold-stamp.webp"
               alt=""
               width={320}
               height={180}
