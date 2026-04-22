@@ -20,6 +20,7 @@ export default function ProjectsSection({ title = "Featured Developments", proje
             title={project.title}
             description={project.description}
             heroImage={project.heroImage}
+            hasSold={project.hasSold}
           />
         ))}
       </div>

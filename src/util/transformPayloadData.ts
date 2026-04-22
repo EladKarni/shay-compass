@@ -11,6 +11,7 @@ export function transformPayloadProject(payloadProject: any): Project {
     title: payloadProject.title || '',
     description: payloadProject.description || '',
     heroImage: getMediaUrl(payloadProject.heroImage) || '',
+    hasSold: Boolean(payloadProject.hasSold),
     fullDescription: payloadProject.fullDescription,
     technologies: payloadProject.technologies?.map((t: any) => t.technology || t) || [],
     features: payloadProject.features?.map((f: any) => f.feature || f) || [],

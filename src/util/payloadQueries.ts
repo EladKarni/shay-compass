@@ -9,6 +9,7 @@ export async function getAllProjects() {
   const { docs: projects } = await payload.find({
     collection: "projects",
     depth: 2, // Include related media
+    sort: ["hasSold", "-createdAt"],
   });
 
   return projects;

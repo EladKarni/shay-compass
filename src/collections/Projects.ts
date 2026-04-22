@@ -4,7 +4,7 @@ export const Projects: CollectionConfig = {
   slug: 'projects',
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'slug', 'updatedAt'],
+    defaultColumns: ['title', 'slug', 'hasSold', 'updatedAt'],
     livePreview: {
       url: ({ data }) => {
         const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
@@ -43,6 +43,17 @@ export const Projects: CollectionConfig = {
             return value
           },
         ],
+      },
+    },
+    {
+      name: 'hasSold',
+      type: 'checkbox',
+      label: 'Sold',
+      defaultValue: false,
+      required: true,
+      admin: {
+        position: 'sidebar',
+        description: 'When enabled, a "SOLD" caution-tape indicator appears on the project card.',
       },
     },
     {

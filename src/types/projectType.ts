@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   image?: string;
   heroImage: string;
+  hasSold?: boolean;
   fullDescription?: any; // Lexical rich text format
   technologies?: string[];
   features?: string[];
