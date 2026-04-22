@@ -39,17 +39,19 @@ export default function ProjectCard({ id, title, description, heroImage, hasSold
         <>
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-10 bg-gray-900/35"
+            className="pointer-events-none absolute inset-0 z-10 bg-gray-900/60"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center overflow-hidden"
+            className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
           >
-            <div className="w-[200%] -rotate-12 bg-[repeating-linear-gradient(45deg,_#fde68a_0_14px,_#1f2937_14px_28px)] backdrop-blur-sm border-y border-white/20 py-2 shadow-md flex items-center justify-center">
-              <span className="text-yellow-50 font-semibold text-xl tracking-[0.4em] [text-shadow:_0_1px_2px_rgba(31,41,55,0.85)]">
-                SOLD
-              </span>
-            </div>
+            <Image
+              src="/sold-stamp.png"
+              alt=""
+              width={320}
+              height={180}
+              className="w-3/4 max-w-xs h-auto drop-shadow-md opacity-90"
+            />
           </div>
           <span className="sr-only">This property is sold.</span>
         </>
